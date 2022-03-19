@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Multicharacter Edit By JSN'
+description 'QB-Multicharacter Edit '
 version '1.0.0'
 
 shared_script 'config.lua'
