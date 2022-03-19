@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Multicharacter Diseñit wapo de Macro'
+description 'QB-Multicharacter Edit By JSN'
 version '1.0.0'
 
 shared_script 'config.lua'
@@ -27,3 +27,5 @@ dependencies {
     'qb-core',
     'qb-spawn'
 }
+
+lua54 'yes'
