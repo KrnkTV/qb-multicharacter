@@ -36,23 +36,15 @@ local function skyCam(bool)
 end
 
 local function openCharMenu(bool)
-    SetNuiFocus(bool, bool)
-    QBCore.Functions.TriggerCallback("qb-multi:server:GetCurrentPlayers", function(Players)
-        --QBCore.Functions.TriggerCallback('sa_vips:obtenerTipoDeVip', function(vipType)
-            --QBCore.Functions.TriggerCallback('sa_vips:obtenerNivel', function(LevelType)
-                SendNUIMessage({
-                    action = "ui",
-                    toggle = bool,
-                    players = Players,
-                    --vip = vipType,
-                    --nivel = LevelType,
-                })
-                --print(vipType)
-                --print(LevelType)
-                skyCam(bool)
-            end)
-        --end)
-    --end)   
+    QBCore.Functions.TriggerCallback("qb-multicharacter:server:GetNumberOfCharacters", function(result)
+        SetNuiFocus(bool, bool)
+        SendNUIMessage({
+            action = "ui",
+            toggle = bool,
+            nChar = result,
+        })
+        skyCam(bool)
+    end)
 end
 
 -- Events
@@ -105,6 +97,7 @@ RegisterNetEvent('qb-multicharacter:client:chooseChar', function()
 end)
 
 -- NUI Callbacks
+
 
 RegisterNUICallback('closeUI', function()
     openCharMenu(false)
